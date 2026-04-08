@@ -1,0 +1,52 @@
+{
+  "name": "2fast2groceries",
+  "type": "module",
+  "version": "0.0.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --write",
+    "typecheck": "turbo run typecheck",
+    "build": "turbo run build",
+    "dev": "concurrently --raw \"pnpm --filter @my-project/api dev\" \"pnpm --filter @my-project/mobile dev\"",
+    "test": "turbo run test",
+    "prepare": "husky"
+  },
+  "packageManager": "pnpm@10.22.0",
+  "pnpm": {
+    "overrides": {}
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.6",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@eslint/js": "^10.0.1",
+    "@my-project/tsconfig": "workspace:^",
+    "@next/eslint-plugin-next": "^16.2.2",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-native": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "turbo": "^2.6.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.58.1"
+  },
+  "resolutions": {},
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "**/*.{json,md,css}": [
+      "prettier --write"
+    ]
+  }
+}

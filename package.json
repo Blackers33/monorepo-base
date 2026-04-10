@@ -41,12 +41,7 @@
     "concurrently": "^9.2.1"
   },
   "lint-staged": {
-    "**/*.{js,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "**/*.{json,md,css}": [
-      "prettier --write"
-    ]
+    "**/*.{js,ts,tsx}": ["pnpm exec eslint --fix", "pnpm exec biome format --write"],
+    "**/*.{json,md,css}": ["pnpm exec biome format --write"]
   }
 }

@@ -12,10 +12,7 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist", "src"],
   "peerDependencies": {},
   "devDependencies": {
     "@my-project/tsconfig": "workspace:^"

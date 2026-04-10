@@ -1,6 +1,6 @@
-const nodeExternals = require("webpack-node-externals");
+const nodeExternals = require('webpack-node-externals')
 
-module.exports = (config) => ({
+module.exports = config => ({
   ...config,
   externals: [
     ...config.externals,
@@ -8,4 +8,4 @@ module.exports = (config) => ({
       allowlist: [/^@my-project\//],
     }),
   ],
-});
+})

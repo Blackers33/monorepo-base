@@ -4,6 +4,7 @@ This repository is a bootstrap exemple for a project with multiple apps :
 
 - api (NestJS)
 - web (NextJS)
+- mobile (React Native)
 
 Using pnpm workspaces (and turborepo for conveniance)
 

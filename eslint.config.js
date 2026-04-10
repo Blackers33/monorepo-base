@@ -1,25 +1,25 @@
-import nextPlugin from "@next/eslint-plugin-next";
-import tsParser from "@typescript-eslint/parser";
-import expoConfig from "eslint-config-expo/flat.js";
+import nextPlugin from '@next/eslint-plugin-next'
+import tsParser from '@typescript-eslint/parser'
+import expoConfig from 'eslint-config-expo/flat.js'
 
 export default [
   {
     ignores: [
-      "**/node_modules/**",
-      "**/.next/**",
-      "**/dist/**",
-      "**/build/**",
-      "**/.expo/**",
-      "apps/web/.next/**",
-      "apps/mobile/metro.config.ts",
-      "apps/mobile/scripts/**",
-      "apps/mobile/eslint.config.js",
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/build/**',
+      '**/.expo/**',
+      'apps/web/.next/**',
+      'apps/mobile/metro.config.ts',
+      'apps/mobile/scripts/**',
+      'apps/mobile/eslint.config.js',
     ],
   },
   {
-    files: ["apps/web/**/*.{js,jsx,ts,tsx}"],
+    files: ['apps/web/**/*.{js,jsx,ts,tsx}'],
     plugins: {
-      "@next/next": nextPlugin,
+      '@next/next': nextPlugin,
     },
     languageOptions: {
       parser: tsParser,
@@ -29,26 +29,26 @@ export default [
     },
     rules: {
       ...nextPlugin.configs.recommended.rules,
-      ...nextPlugin.configs["core-web-vitals"].rules,
-      "@next/next/no-html-link-for-pages": "off",
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      '@next/next/no-html-link-for-pages': 'off',
     },
   },
-  ...(Array.isArray(expoConfig) ? expoConfig : [expoConfig]).map((config) => ({
+  ...(Array.isArray(expoConfig) ? expoConfig : [expoConfig]).map(config => ({
     ...config,
-    files: ["apps/mobile/**/*.{js,jsx,ts,tsx}"],
+    files: ['apps/mobile/**/*.{js,jsx,ts,tsx}'],
   })),
   {
-    files: ["apps/mobile/**/*.{js,jsx,ts,tsx}"],
+    files: ['apps/mobile/**/*.{js,jsx,ts,tsx}'],
     settings: {
-      "import/resolver": {
+      'import/resolver': {
         typescript: {
-          project: "./apps/mobile/tsconfig.json",
+          project: './apps/mobile/tsconfig.json',
         },
       },
     },
     rules: {
-      "react-native/no-raw-text": "off",
-      "react/no-unescaped-entities": "off",
+      'react-native/no-raw-text': 'off',
+      'react/no-unescaped-entities': 'off',
     },
   },
-];
+]

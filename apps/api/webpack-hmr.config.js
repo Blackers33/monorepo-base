@@ -1,12 +1,12 @@
-const nodeExternals = require("webpack-node-externals");
-const { RunScriptWebpackPlugin } = require("run-script-webpack-plugin");
+const nodeExternals = require('webpack-node-externals')
+const { RunScriptWebpackPlugin } = require('run-script-webpack-plugin')
 
 module.exports = (options, webpack) => ({
   ...options,
-  entry: ["webpack/hot/poll?100", options.entry],
+  entry: ['webpack/hot/poll?100', options.entry],
   externals: [
     nodeExternals({
-      allowlist: [/^@my-project\//, "webpack/hot/poll?100"],
+      allowlist: [/^@my-project\//, 'webpack/hot/poll?100'],
     }),
   ],
   plugins: [
@@ -20,4 +20,4 @@ module.exports = (options, webpack) => ({
       autoRestart: false,
     }),
   ],
-});
+})

@@ -15,7 +15,7 @@ apps => application that can be started
 packages => shared packages
 ```
 
-Every package or app must have a `package.json` file describing dependencies, naming of the package should be `@my-project/package-name` (change my-project by what you want but keep consistency).
+Every package or app must have a `package.json` file describing dependencies, naming of the package should be `@monorepo-base/package-name` (change monorepo-base by what you want but keep consistency).
 
 ## Setup
 
@@ -82,10 +82,17 @@ Precompiling package also means dependency can have trouble being tree-shaken.
 
 The approach here is to use :
 
-- webpack on NestJS, compiling everything and using `node-externals` for exclusions (like node_modules) except for the packages starting by our prefix `@my-project`
-- transpilePackages on NextJS, to compile the packages starting by our prefix `@my-project`
+- webpack on NestJS, compiling everything and using `node-externals` for exclusions (like node_modules) except for the packages starting by our prefix `@workspace`
+- transpilePackages on NextJS, to compile the packages starting by our prefix `@workspace`
 
 This way, the apps themselves use the package sources directly without the need to be precompiled first.
+
+All TypeScript configurations extend from two sources:
+
+../../tsconfig.base.json at the root, which centralizes the paths aliases for all @workspace/* packages
+@workspace/tsconfig/[preset].json (e.g. nest.json, next.json) which provides the compiler options specific to each app type
+
+This means renaming or adding a package only requires updating tsconfig.base.json in one place.
 
 ### Biome
 

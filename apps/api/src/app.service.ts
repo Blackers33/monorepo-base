@@ -1,5 +1,5 @@
-import { getHelloWorld } from '@my-project/shared-utils'
 import { Injectable } from '@nestjs/common'
+import { getHelloWorld } from '@workspace/shared-utils'
 
 @Injectable()
 export class AppService {

@@ -1,9 +1,8 @@
 {
-  "extends": "@my-project/tsconfig/next.json",
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
-      "@my-project/shared-utils": ["../../packages/shared-utils/src"]
+      "@workspace/shared-utils": ["../../packages/shared-utils/src"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

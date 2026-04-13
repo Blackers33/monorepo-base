@@ -1,14 +1,10 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./base.json",
+  "extends": ["../../tsconfig.base.json", "@workspace/tsconfig/next.json"],
   "compilerOptions": {
-    "module": "ESNext",
-    "target": "ES2022",
-    "moduleResolution": "Bundler",
-    "jsx": "preserve",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "types": ["node", "react", "react-dom"]
-  }
+    "paths": {
+      "@workspace/shared-utils": ["../../packages/shared-utils/src"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

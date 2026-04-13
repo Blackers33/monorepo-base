@@ -1,4 +1,4 @@
-import { getHelloWorld } from '@my-project/shared-utils'
+import { getHelloWorld } from '@workspace/shared-utils'
 
 export const dynamic = 'force-dynamic'
 

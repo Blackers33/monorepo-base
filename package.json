@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-base",
+  "name": "2fast2groceries",
   "type": "module",
   "version": "0.0.0",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "lint:fix": "biome check . --write",
     "typecheck": "turbo run typecheck",
     "build": "turbo run build",
-    "dev": "concurrently --raw \"pnpm --filter @my-project/api dev\" \"pnpm --filter @my-project/mobile dev\"",
+    "dev": "concurrently --raw \"pnpm --filter @workspace/api dev\" \"pnpm --filter @workspace/mobile dev\"",
     "test": "turbo run test",
     "prepare": "husky"
   },
@@ -25,7 +25,7 @@
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@eslint/js": "^10.0.1",
-    "@my-project/tsconfig": "workspace:^",
+    "@workspace/tsconfig": "workspace:^",
     "@next/eslint-plugin-next": "^16.2.2",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-react": "^7.37.5",

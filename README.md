@@ -22,8 +22,8 @@ Every package or app must have a `package.json` file describing dependencies, na
 1. Install the IDE extension Biome (for linting)
 2. Install pnpm (from website curl, if you want pnpm to automaticaly manage node version, which is recommended, avoid npm, corepack or packaga manager => https://pnpm.io/installation)
 3. Install dependencies: `pnpm i`
+4. In package.json, change the project name : "name": "monorepo-base"
 
-For linting, you can replace biome with packages/eslint you will find an exemple in the `legacy` git branch.
 
 ## Develop
 

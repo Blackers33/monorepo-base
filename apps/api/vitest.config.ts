@@ -28,6 +28,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: resolve(__dirname, './src'),
+      '@workspace/shared-utils': resolve(__dirname, '../../packages/shared-utils/src/index.ts'),
     },
   },
 })

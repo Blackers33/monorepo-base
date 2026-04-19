@@ -28,7 +28,7 @@
       "recommended": true,
       "complexity": { "useLiteralKeys": "off" },
       "correctness": { "noUnusedVariables": "warn" },
-      "suspicious": { "noExplicitAny": "warn", "noTsIgnore": "warn" }
+      "suspicious": { "noExplicitAny": "warn", "noTsIgnore": "warn", "noUnknownAtRules": "off" }
     },
     "domains": {
       "next": "recommended",
